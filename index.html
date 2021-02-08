@@ -53,7 +53,7 @@
       <div class="hero__image"></div>
       <div class="hero__text container--pall">
         <h1>
-          Next generation digital banking
+          Welcome Salvador!
         </h1>
         <p>Take your financial life online. Your Easybank account will be a one-stop-shop 
           for spending, saving, budgeting, investing, and much more.
@@ -62,6 +62,30 @@
       </div>
     </div>
   </section>
+
+  <section class="test" id="torre-profile">
+    <div id = "search-container">
+      <select id = "city-state" v-model = "city">
+          <option value = "">Choose</option> Member</option>
+          <option value = "jsdelarosa">Salvador</option>
+          <option value = "BNY">Buffalo, NY</option>
+          <option value = "HTX">Houston, TX</option>
+      </select>
+      <button type = "button" id = "search-btn" @click = "clickSearch">Search Listings</button>
+      <h4 id = "search-meta" v-if = "searchClicked && results.length != 0">Top 6 Results</h4>
+    </div>
+    <div id = "result-container" v-if = "results.length != 0">
+        <div class = "result" v-for = "(result,index) in results" :key = "index">
+            <img :src = "result.image" class = "prop-img">
+            <h4 class = "rating"> {{result.start_rating}}/5 ({{result.reviews_count}} reviews)</h4>
+            <h3 class = "property-name">{{result.name}}</h3>
+            <h5 class = "property-address">{{result.address}}</h5>
+            <p class = "capacity">Capacity: {{result.capacity_of_people}} people</p>
+            <p class = "prices">Night Price : ${{result.night_price}} <br> Weekly Price: ${{result.weekly_price}} <br> Monthly Price: ${{result.monthly_price}}</p>
+        </div> 
+    </div>
+  
+    </section>
 
   <section class="feature">
     <div class="feature__content container container--pall">
@@ -246,5 +270,7 @@
   </div>
 
   <script src="/app/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="/app/js/app.js"></script>
 </body>
 </html>
