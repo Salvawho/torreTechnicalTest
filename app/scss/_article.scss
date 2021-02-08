@@ -1,0 +1,67 @@
+.article {
+    background-color: $veryLightGray;
+    margin-bottom: 3.75rem;
+    text-align: center;
+
+    @include breakpoint-up(medium){
+        text-align: left;
+    }
+
+    &__grid {
+        @include breakpoint-up(medium){
+            display: flex;
+            flex-wrap: wrap;
+        }
+        gap: 1.875rem;
+    }
+
+    &__item {
+        background-color: $white;
+        border-radius: 0.3125rem;
+        overflow: hidden;
+
+        @include breakpoint-up(medium){
+            flex: 1 0 50%;
+        }
+        @include breakpoint-up(large){
+            max-width: 25%;
+            flex: 1;
+        }
+    }
+
+    &__image {
+        height: 12.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__text {
+        padding:1.875rem 1.875rem 2.5rem 1.875rem;
+        @include breakpoint-up(medium){
+            padding: 1.875rem 1.562rem;
+        }
+        color: $grayishBlue;
+    }
+
+    &__author {
+        font-size: 0.7rem;
+        margin-bottom: 0.875rem;
+    }
+
+    &__title {
+        font-size: 1.0625rem;
+        line-height: 1.2;
+        color: $darkBlue;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(large){
+            font-size: 1.0625rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__description {
+        font-size: 0.8125rem;
+    }
+}
