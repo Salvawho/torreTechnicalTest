@@ -39,7 +39,7 @@
 
         a{
             img {
-                height: 19.7px;
+                height: 1.23125rem;
             }
         }
     }
@@ -116,16 +116,6 @@
                     opacity: 1;
                 }
             }
-        }
-    }
-
-    &__cta {
-        font-size: $font-sm;
-        color: white;
-        transition: opacity 300ms ease-in-out;
-
-        &:hover{
-            opacity: 0.6;
         }
     }
 }
