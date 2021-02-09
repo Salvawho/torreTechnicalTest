@@ -34,168 +34,66 @@
 
     </header>
 
-    <section class="hero">
-      <div class="container">
-        <div class="hero__image"></div>
-        <div class="hero__text container--pall">
-          <h1>
-            Welcome Salvador!
-          </h1>
-          <p>Take your financial life online. Your Easybank account will be a one-stop-shop 
-            for spending, saving, budgeting, investing, and much more.
-          </p>
-          <a href="#" class="button hero__cta">Request Invite</a>
-        </div>
-      </div>
-    </section>
+    <!-- <Elements data /> -->
 
-    <!-- <section class="test" id="torre-profile">
-      <div id = "search-container">
-        <select id = "city-state" v-model = "city">
-            <option value = "">Choose Member</option>
-            <option value = "jsdelarosa">Salvador</option>
-            <option value = "BNY">Buffalo, NY</option>
-            <option value = "HTX">Houston, TX</option>
-        </select>
-        <button type = "button" id = "search-btn" @click = "clickSearch">Search Listings</button>
-        <h4 id = "search-meta" v-if = "searchClicked && results.length != 0">Top 6 Results</h4>
-      </div>
-      <div id = "result-container" v-if = "results.length != 0">
-          <div class = "result" v-for = "(result,index) in results" :key = "index">
-              <img :src = "result.image" class = "prop-img">
-              <h4 class = "rating"> {{result.start_rating}}/5 ({{result.reviews_count}} reviews)</h4>
-              <h3 class = "property-name">{{result.name}}</h3>
-              <h5 class = "property-address">{{result.address}}</h5>
-              <p class = "capacity">Capacity: {{result.capacity_of_people}} people</p>
-              <p class = "prices">Night Price : ${{result.night_price}} <br> Weekly Price: ${{result.weekly_price}} <br> Monthly Price: ${{result.monthly_price}}</p>
-          </div> 
-      </div>
-    
-      </section> -->
+      <section class="hero">
+        <div class="container">
+            <div class="hero__image"></div>
+            <div class="hero__text container--pall">
+            <h1>
+                Meet {{ data.person.name }}
+            </h1>
+            <p>{{ data.person.summaryOfBio }}
+            </p>
+            <div class="social_media" v-if="data.person.links != null">
+              <h3>Follow on:</h3>
+              <div class="social_media_count" v-for="(persons, index) in data.person.links" :key = "index">
+                <a :href="data.person.links[index].address" class="button">{{data.person.links[0].name}}</a>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </section>
 
     <section class="feature">
       <div class="feature__content container container--pall">
         <div class="feature__intro">
-          <h2>Why choose Easybank?</h2>
+          <h2>The background</h2>
           <p>
-            We leverage Open Banking to turn your bank account into your financial hub. Control 
-            your finances like never before.</p>
+            Recent jobs</p>
         </div>
-    
           <div class="feature__grid">
-            <div class="feature__item">
+            <div class="feature__item" v-for="job in data.jobs" :key="job.index">
               <div class="feature__icon"><img src="../src/assets/images/icon-online.svg" alt=""></div>
               <div class="feature__title">
-                Online Banking
+                {{ job.name }}
               </div>
               <div class="feature__description">
-                Our modern web and mobile applications allow you to keep track of your finances 
-                wherever you are in the world.
-              </div>
-            </div>
-    
-            <div class="feature__item">
-              <div class="feature__icon"><img src="../src/assets/images/icon-budgeting.svg" alt=""></div>
-              <div class="feature__title">
-                Simple Budgeting
-              </div>
-              <div class="feature__description">
-                See exactly where your money goes each month. Receive notifications when you’re 
-                close to hitting your limits.
-              </div>
-            </div>
-    
-            <div class="feature__item">
-              <div class="feature__icon"><img src="../src/assets/images/icon-onboarding.svg" alt=""></div>
-              <div class="feature__title">
-                Fast Onboarding
-              </div>
-              <div class="feature__description">
-                We don’t do branches. Open your account in minutes online and start taking control 
-                of your finances right away.
-              </div>
-            </div>
-    
-            <div class="feature__item">
-              <div class="feature__icon"><img src="../src/assets/images/icon-api.svg" alt=""></div>
-              <div class="feature__title">
-                Open API
-              </div>
-              <div class="feature__description">
-                Manage your savings, investments, pension, and much more from one account. Tracking 
-                your money has never been easier.
+                At {{ job.organizations[0].name }} from {{ job.fromMonth}} {{ job.fromYear }} to {{ job.toMonth}} {{ job.toYear }}
               </div>
             </div>
           </div>
       </div>
-
-
     </section>
-
+<!-- <div v-for="gen in data.strengths" :key="gen.index">
+  {{gen.name}}
+</div> -->
     <section class="article">
       <div class="container container--pall">
-          <h2>Latest Articles</h2>
+          <h2>Education</h2>
           <div class="article__grid">
-            <a href="#" class="article__item">
-              <div class="article__image" style="background-image: url(../../src/assets/images/image-currency.jpg);"></div>
+            <a href="#" class="article__item" v-for="gen in data.education" :key="gen.index">
+              <div class="article__image" style="background-color: darkGray;"></div>
               <div class="article__text">
                 <div class="article__author">
-                  By Claire Robinson
+                  {{gen.organizations[0].name}}
                 </div>
                 <div class="article__title">
-                  Receive money in any currency with no fees
+                  {{gen.name}}
                 </div>
                 <div class="feature__description">
                   The world is getting smaller and we’re becoming more mobile. So why should you be 
                   forced to only receive money in a single …
-                </div>
-              </div>
-            </a>
-    
-            <a href="#" class="article__item">
-              <div class="article__image" style="background-image: url(/images/image-restaurant.jpg);"></div>
-              <div class="article__text">
-                <div class="article__author">
-                  By Wilson Hutton
-                </div>
-                <div class="article__title">
-                  Treat yourself without worrying about money
-                </div>
-                <div class="feature__description">
-                  Our simple budgeting feature allows you to separate out your spending and set 
-    realistic limits each month. That means you …
-                </div>
-              </div>
-            </a>
-
-            <a href="#" class="article__item">
-              <div class="article__image" style="background-image: url(/images/image-plane.jpg);"></div>
-              <div class="article__text">
-                <div class="article__author">
-                  By Wilson Hutton
-                </div>
-                <div class="article__title">
-                  Take your Easybank card wherever you go
-                </div>
-                <div class="feature__description">
-                  We want you to enjoy your travels. This is why we don’t charge any fees on purchases 
-    while you’re abroad. We’ll even show you …
-                </div>
-              </div>
-            </a>
-
-            <a href="#" class="article__item">
-              <div class="article__image" style="background-image: url(/images/image-confetti.jpg);"></div>
-              <div class="article__text">
-                <div class="article__author">
-                  By Claire Robinson
-                </div>
-                <div class="article__title">
-                  Our invite-only Beta accounts are now live!
-                </div>
-                <div class="feature__description">
-                  After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
-    It’s easy to request an invite through the site ...
                 </div>
               </div>
             </a>
@@ -208,7 +106,6 @@
         <a href="#" class="footer__logo">
           <img src="../src/assets/images/logo-torre-white.svg" alt="">
         </a>
-    
         <div class="footer__social">
           <a href="#">
             <img src="../src/assets/images/icon-facebook.svg" alt="Facebook">
@@ -258,18 +155,32 @@
 </template>
 
 <script>
-//  import HelloWorld from './components/HelloWorld.vue'
-//  import MenuHeader from './components/MenuHeader.vue'
+
+import Elements from './components/Elements.vue'
+import Vue from 'vue';
 
 export default {
-  name: 'App',
+  data: "",
+  props:['data'],
   components: {
-    // HelloWorld
-    // MenuHeader
+    Elements
+  },
+  data () {
+    return {
+      data,
+      icons: ["../src/assets/images/icon-online.svg"]
+    }
+  },
+  mounted(){
+    Vue.axios.get('https://torre.bio/api/bios/jsdelarosa')
+    .then((resp)=> {
+      this.data = resp.data
+      console.log(this.data)
+    })
   }
 }
 </script>
 
 <style lang="scss">
-@import "./assets/app/scss/style.scss"
+  @import "./assets/app/scss/style.scss"
 </style>
