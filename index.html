@@ -13,6 +13,11 @@
 
 </head>
 <body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
 
   <header class="header">
     <div class="overlay has-fade"></div>
@@ -270,7 +275,6 @@
   </div>
 
   <script src="/app/js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="/app/js/app.js"></script>
 </body>
 </html>

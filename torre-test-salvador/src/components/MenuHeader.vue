@@ -1,0 +1,46 @@
+<template>
+  <div class="menuHeader">
+    <header class="header">
+      <div class="overlay has-fade"></div>
+      <nav class="container container--pall flex flex-jc-sb flex-ai-c">
+        <a href="/" class="header__logo">
+          <img src="../src/assets/images/logo-torre.svg" alt="Easybank">
+        </a>
+
+        <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="header__links hide-for-mobile">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+
+        <a href="#" class="button header__cta hide-for-mobile">Request Invite</a>
+      </nav>
+
+      <div class="header__menu has-fade">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Blog</a>
+        <a href="">Careers</a>
+      </div>
+
+    </header>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'MenuHeader',
+  props: {
+    msg: String
+  }
+}
+</script>

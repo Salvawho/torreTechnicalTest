@@ -1,0 +1,123 @@
+.footer {
+    background-color: $darkBlue;
+    color: $white;
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 1rem;
+
+    .container {
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            grid-template-rows: 1fr auto;
+            grid-template-areas: "logo links1 links2 cta"
+                                "social links1 links2 copyright";
+        }
+    }
+
+    a {
+        color: $white;
+    }
+
+    &__logo {
+        img {
+            max-height: 2rem;
+        }
+
+        @include breakpoint-down(medium){
+            img {
+                margin-bottom: 1.875rem;
+            }
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: logo;
+        }
+
+    }
+
+    &__social {
+
+        @include breakpoint-down(medium){ 
+            margin-bottom: 1.875rem;            
+        }
+        @include breakpoint-up(large) {
+            grid-area: social;
+        }
+
+
+
+        a {
+            display: inline-block;
+            transition: all 150ms ease-in-out;
+            
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+
+        a:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        line-height: 2rem;
+
+        @include breakpoint-up(large) {
+            align-items: start;
+        }
+
+        &.col1 {
+            @include breakpoint-up(large) {
+                grid-area: links1;
+            }
+        }
+
+        &.col2 {
+            @include breakpoint-down(medium){
+                margin-bottom: 1.875rem;    
+            }
+
+            @include breakpoint-up(large) {
+                grid-area: links2;
+            }
+        }
+
+        a {
+            transition: all 150ms ease-in-out;
+
+            &:hover{
+                color: $limeGreen;
+            }
+        }
+    }
+
+    &__cta {
+        @include breakpoint-up(large) {
+            grid-area: cta;
+            text-align: right;
+            justify-self: end;
+        }
+
+        a.button {
+            @include breakpoint-down(medium){
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+
+    &__copyright {
+        margin-top: 1rem;
+        color: $lightGrayishBlue;
+        text-align: right;
+        @include breakpoint-up(large) {
+            grid-area: copyright;
+        }
+
+    }
+}

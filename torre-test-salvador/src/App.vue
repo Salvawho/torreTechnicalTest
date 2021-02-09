@@ -1,0 +1,276 @@
+<template>
+  <div id="app">
+    <header class="header">
+      <div class="overlay has-fade"></div>
+      <nav class="container container--pall flex flex-jc-sb flex-ai-c">
+        <a href="/" class="header__logo">
+          <img src="../src/assets/images/logo-torre.svg" alt="Easybank">
+        </a>
+
+        <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="header__links hide-for-mobile">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+
+        <a href="#" class="button header__cta hide-for-mobile">Request Invite</a>
+      </nav>
+
+      <div class="header__menu has-fade">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Blog</a>
+        <a href="">Careers</a>
+      </div>
+
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero__image"></div>
+        <div class="hero__text container--pall">
+          <h1>
+            Welcome Salvador!
+          </h1>
+          <p>Take your financial life online. Your Easybank account will be a one-stop-shop 
+            for spending, saving, budgeting, investing, and much more.
+          </p>
+          <a href="#" class="button hero__cta">Request Invite</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="test" id="torre-profile">
+      <div id = "search-container">
+        <select id = "city-state" v-model = "city">
+            <option value = "">Choose Member</option>
+            <option value = "jsdelarosa">Salvador</option>
+            <option value = "BNY">Buffalo, NY</option>
+            <option value = "HTX">Houston, TX</option>
+        </select>
+        <button type = "button" id = "search-btn" @click = "clickSearch">Search Listings</button>
+        <h4 id = "search-meta" v-if = "searchClicked && results.length != 0">Top 6 Results</h4>
+      </div>
+      <div id = "result-container" v-if = "results.length != 0">
+          <div class = "result" v-for = "(result,index) in results" :key = "index">
+              <img :src = "result.image" class = "prop-img">
+              <h4 class = "rating"> {{result.start_rating}}/5 ({{result.reviews_count}} reviews)</h4>
+              <h3 class = "property-name">{{result.name}}</h3>
+              <h5 class = "property-address">{{result.address}}</h5>
+              <p class = "capacity">Capacity: {{result.capacity_of_people}} people</p>
+              <p class = "prices">Night Price : ${{result.night_price}} <br> Weekly Price: ${{result.weekly_price}} <br> Monthly Price: ${{result.monthly_price}}</p>
+          </div> 
+      </div>
+    
+      </section> -->
+
+    <section class="feature">
+      <div class="feature__content container container--pall">
+        <div class="feature__intro">
+          <h2>Why choose Easybank?</h2>
+          <p>
+            We leverage Open Banking to turn your bank account into your financial hub. Control 
+            your finances like never before.</p>
+        </div>
+    
+          <div class="feature__grid">
+            <div class="feature__item">
+              <div class="feature__icon"><img src="../src/assets/images/icon-online.svg" alt=""></div>
+              <div class="feature__title">
+                Online Banking
+              </div>
+              <div class="feature__description">
+                Our modern web and mobile applications allow you to keep track of your finances 
+                wherever you are in the world.
+              </div>
+            </div>
+    
+            <div class="feature__item">
+              <div class="feature__icon"><img src="../src/assets/images/icon-budgeting.svg" alt=""></div>
+              <div class="feature__title">
+                Simple Budgeting
+              </div>
+              <div class="feature__description">
+                See exactly where your money goes each month. Receive notifications when you’re 
+                close to hitting your limits.
+              </div>
+            </div>
+    
+            <div class="feature__item">
+              <div class="feature__icon"><img src="../src/assets/images/icon-onboarding.svg" alt=""></div>
+              <div class="feature__title">
+                Fast Onboarding
+              </div>
+              <div class="feature__description">
+                We don’t do branches. Open your account in minutes online and start taking control 
+                of your finances right away.
+              </div>
+            </div>
+    
+            <div class="feature__item">
+              <div class="feature__icon"><img src="../src/assets/images/icon-api.svg" alt=""></div>
+              <div class="feature__title">
+                Open API
+              </div>
+              <div class="feature__description">
+                Manage your savings, investments, pension, and much more from one account. Tracking 
+                your money has never been easier.
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    </section>
+
+    <section class="article">
+      <div class="container container--pall">
+          <h2>Latest Articles</h2>
+          <div class="article__grid">
+
+            <a href="#" class="article__item">
+              <div class="article__image" style="background-image: url(/images/image-currency.jpg);"></div>
+              <div class="article__text">
+                <div class="article__author">
+                  By Claire Robinson
+                </div>
+                <div class="article__title">
+                  Receive money in any currency with no fees
+                </div>
+                <div class="feature__description">
+                  The world is getting smaller and we’re becoming more mobile. So why should you be 
+                  forced to only receive money in a single …
+                </div>
+              </div>
+            </a>
+    
+            <a href="#" class="article__item">
+              <div class="article__image" style="background-image: url(/images/image-restaurant.jpg);"></div>
+              <div class="article__text">
+                <div class="article__author">
+                  By Wilson Hutton
+                </div>
+                <div class="article__title">
+                  Treat yourself without worrying about money
+                </div>
+                <div class="feature__description">
+                  Our simple budgeting feature allows you to separate out your spending and set 
+    realistic limits each month. That means you …
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="article__item">
+              <div class="article__image" style="background-image: url(/images/image-plane.jpg);"></div>
+              <div class="article__text">
+                <div class="article__author">
+                  By Wilson Hutton
+                </div>
+                <div class="article__title">
+                  Take your Easybank card wherever you go
+                </div>
+                <div class="feature__description">
+                  We want you to enjoy your travels. This is why we don’t charge any fees on purchases 
+    while you’re abroad. We’ll even show you …
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="article__item">
+              <div class="article__image" style="background-image: url(/images/image-confetti.jpg);"></div>
+              <div class="article__text">
+                <div class="article__author">
+                  By Claire Robinson
+                </div>
+                <div class="article__title">
+                  Our invite-only Beta accounts are now live!
+                </div>
+                <div class="feature__description">
+                  After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
+    It’s easy to request an invite through the site ...
+                </div>
+              </div>
+            </a>
+          </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="container">
+        <a href="#" class="footer__logo">
+          <img src="../src/assets/images/logo-torre-white.svg" alt="">
+        </a>
+    
+        <div class="footer__social">
+          <a href="#">
+            <img src="../src/assets/images/icon-facebook.svg" alt="Facebook">
+          </a>
+          <a href="#">
+            <img src="../src/assets/images/icon-youtube.svg" alt="YouTube">
+          </a>
+          <a href="#">
+            <img src="../src/assets/images/icon-twitter.svg" alt="Twitter">
+          </a>
+          <a href="#">
+            <img src="../src/assets/images/icon-pinterest.svg" alt="Pinterest">
+          </a>
+          <a href="#">
+            <img src="../src/assets/images/icon-instagram.svg" alt="Instagram">
+          </a>
+        </div>
+    
+        <div class="footer__links col1">
+          <a href="">About Us</a>
+          <a href="">Contact</a>
+          <a href="">Blog</a>
+        </div>
+    
+        <div class="footer__links col2">
+          <a href="">Careers</a>
+          <a href="">Support</a>
+          <a href="">Privacy Policy</a>
+        </div>
+    
+        <div class="footer__cta">
+          <a href="#" class="button">Request Invite</a>
+        </div>
+
+        <div class="footer__copyright">  
+          &copy; Torre Labs, Inc.
+        </div>
+      </div>
+    </footer>
+
+    <div class="attribution" style="text-align:center; font-size: 0.8rem;">
+      Based on the challenge by <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="http://github.com/Salvawho">Salvador</a>.
+    </div>
+
+  </div>
+</template>
+
+<script>
+//  import HelloWorld from './components/HelloWorld.vue'
+//  import MenuHeader from './components/MenuHeader.vue'
+
+export default {
+  name: 'App',
+  components: {
+    // HelloWorld
+    // MenuHeader
+  }
+}
+</script>
+
+<style lang="scss">
+@import "./assets/app/scss/style.scss"
+</style>
