@@ -136,9 +136,8 @@
       <div class="container container--pall">
           <h2>Latest Articles</h2>
           <div class="article__grid">
-
             <a href="#" class="article__item">
-              <div class="article__image" style="background-image: url(/images/image-currency.jpg);"></div>
+              <div class="article__image" style="background-image: url(../../src/assets/images/image-currency.jpg);"></div>
               <div class="article__text">
                 <div class="article__author">
                   By Claire Robinson
